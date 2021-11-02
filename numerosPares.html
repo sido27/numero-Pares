@@ -27,7 +27,7 @@
       btn = document.createElement("button");
       linebreak = document.createElement("br");
       btn.innerHTML = i;
-      btn.id = i;
+      btn.id = "id" + i;
 
       document.querySelector("#div").appendChild(btn);
 
@@ -38,9 +38,9 @@
 
     function buttonClicked(number) {
       if (number % 2 == 0) {
-        document.getElementById(number).innerHTML = "__";
+        document.getElementById("id" + number).innerHTML = "__";
       } else {
-        document.getElementById(number).style.color = "red";
+        document.getElementById("id" + number).style.color = "red";
       }
     }
 
