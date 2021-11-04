@@ -19,6 +19,7 @@
   <body>
     <div id="div1">
       <div id="div"></div>
+      <div id="divCont"></div>
     </div>
   </body>
 
@@ -52,5 +53,21 @@
         this.disabled = true;
       });
     }
+
+    let Max = 59;
+    let cont = 0;
+    let allNums = document.querySelectorAll("button");
+    function tick() {
+      let tiempoRestante = document.getElementById("divCont");
+      tiempoRestante.innerHTML = `tiempo restante: ${Max}`;
+      Max--;
+      if (Max < 0) {
+        for (i in allNums) {
+          allNums[i].disabled = true;
+        }
+        tiempoRestante.innerHTML = `game over`;
+      }
+    }
+    setInterval(tick, 1000);
   </script>
 </html>
