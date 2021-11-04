@@ -60,10 +60,16 @@
       let tiempoRestante = document.getElementById("divCont");
       tiempoRestante.innerHTML = `tiempo restante: ${Max}`;
       Max--;
-      if (Max < 0) {
-        for (i in allNums) {
-          allNums[i].disabled = true;
-        }
+      if (Max < 57) {
+        allNums.forEach((elem) => {
+          elem.disabled = true;
+        });
+
+        // for (i in allNums) {
+        //   allNums[i].disabled = true;
+        // }
+        // otra manera de hacerlos
+
         tiempoRestante.innerHTML = `GAME OVER`;
       }
     }
